@@ -1,0 +1,10 @@
+#!/bin/bash
+
+args=
+for y in "$@"; do
+  if [ "$y" == "$1" ]; then continue; fi
+  args="$args $y"
+done
+
+file=$(basename $1 .java)
+javac "$file.java" && java $file $args
