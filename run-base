@@ -11,4 +11,4 @@ dir=$(dirname $1)
 if [ "$dir" != "" ]; then
   dir="$dir/"
 fi
-javac "$dir$file.java" && java "$dir$file" $args
+javac -encoding UTF-8 "$dir$file.java" && java -Dfile.encoding=UTF-8 "$dir$file" $args
