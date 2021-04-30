@@ -1,3 +1,3 @@
 #!/bin/bash
 
-find com/java -name '*.class' -exec rm '{}' \;
+find com -name '*.class' -exec rm '{}' \;
