@@ -8,7 +8,5 @@ done
 
 file=$(basename $1 .java)
 dir=$(dirname $1)
-if [ "$dir" != "" ]; then
-  dir="$dir/"
-fi
-javac -encoding UTF-8 "$dir/*.java" && java -Dfile.encoding=UTF-8 "$dir$file" $args
+
+javac -encoding UTF-8 "$dir/$file.java" && java -Dfile.encoding=UTF-8 "$dir/$file" $args
