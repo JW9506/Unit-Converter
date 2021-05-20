@@ -1,5 +1,13 @@
 #!/bin/bash
 
+java_home="/c/Program Files/Java/jdk1.8.0_231"
+javac() {
+  "$java_home/bin/javac" $@
+}
+java() {
+  "$java_home/bin/java" $@
+}
+
 args=
 for y in "$@"; do
   if [ "$y" == "$1" ]; then continue; fi
@@ -8,5 +16,7 @@ done
 
 file=$(basename $1 .java)
 dir=$(dirname $1)
-
-javac -encoding UTF-8 "$dir/$file.java" && java -Dfile.encoding=UTF-8 "$dir/$file" $args
+dir_remove_src=${dir#*/}
+classpath="src;bin;lib/*"
+output_dest="bin"
+javac -cp $classpath -d $output_dest -encoding UTF-8 "$dir/$file.java" && java -cp $classpath -Dfile.encoding=UTF-8 "$dir_remove_src/$file" $args

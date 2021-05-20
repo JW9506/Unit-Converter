@@ -1,3 +1,4 @@
 #!/bin/bash
 
-find com -name '*.class' -exec rm '{}' \;
+find src -name '*.class' -exec rm '{}' \;
+find bin -name '*.class' -exec rm '{}' \;
