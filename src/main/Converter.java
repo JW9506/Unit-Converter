@@ -45,7 +45,7 @@ public class Converter {
       System.out.println("2. Miles(mi) to Kilometers(km)");
       System.out.println("3. Celsius(C) to Fahrenheit(F)");
       System.out.println("4. Quit");
-      menuSelection = Integer.parseInt(sc.nextLine());
+      menuSelection = sc.nextInt();
       switch (menuSelection) {
         case 1:
           cupTeaspoonDisplay(loop);
@@ -70,17 +70,17 @@ public class Converter {
       System.out.println("1. Cups to Teaspoons");
       System.out.println("2. Teaspoons to Cups");
       System.out.println("3. Quit");
-      menuSelection = Integer.parseInt(sc.nextLine());
+      menuSelection = sc.nextInt();
       switch (menuSelection) {
         case 1:
           System.out.println("Enter cups:");
-          unitInput = Double.parseDouble(sc.nextLine());
+          unitInput = sc.nextDouble();
           unitOutput = cupsTeaspoons(unitInput, true);
           display("cups", unitInput, "tsp", unitOutput);
           break;
         case 2:
           System.out.println("Enter Teaspoons:");
-          unitInput = Double.parseDouble(sc.nextLine());
+          unitInput = sc.nextDouble();
           unitOutput = cupsTeaspoons(unitInput, false);
           display("tsp", unitInput, "cups", unitOutput);
           break;
@@ -102,17 +102,17 @@ public class Converter {
       System.out.println("1. Celsius to Fahrenheit");
       System.out.println("2. Fahrenheit to Celsius");
       System.out.println("3. Quit");
-      menuSelection = Integer.parseInt(sc.nextLine());
+      menuSelection = sc.nextInt();
       switch (menuSelection) {
         case 1:
           System.out.println("Enter Celsius:");
-          unitInput = Double.parseDouble(sc.nextLine());
+          unitInput = sc.nextDouble();
           unitOutput = celsiusFahrenheit(unitInput, true);
           display("C", unitInput, "F", unitOutput);
           break;
         case 2:
           System.out.println("Enter Fahrenheit:");
-          unitInput = Double.parseDouble(sc.nextLine());
+          unitInput = sc.nextDouble();
           unitOutput = celsiusFahrenheit(unitInput, false);
           display("F", unitInput, "C", unitOutput);
           break;
@@ -134,17 +134,17 @@ public class Converter {
       System.out.println("1. Miles to Kilometers");
       System.out.println("2. Kilometers to Miles");
       System.out.println("3. Quit");
-      menuSelection = Integer.parseInt(sc.nextLine());
+      menuSelection = sc.nextInt();
       switch (menuSelection) {
         case 1:
           System.out.println("Enter Miles:");
-          unitInput = Double.parseDouble(sc.nextLine());
+          unitInput = sc.nextDouble();
           unitOutput = milesKilometers(unitInput, true);
           display("mi", unitInput, "km", unitOutput);
           break;
         case 2:
           System.out.println("Enter Kilometers:");
-          unitInput = Double.parseDouble(sc.nextLine());
+          unitInput = sc.nextDouble();
           unitOutput = milesKilometers(unitInput, false);
           display("km", unitInput, "mi", unitOutput);
           break;
