@@ -3,7 +3,7 @@ package main;
 import main.utils.g;
 
 public class Converter {
-  private static Displayer view = null;
+  private static UnitConversionBase view = null;
 
   public static void main(String[] args) {
     int menuSelection = -1;
@@ -16,13 +16,13 @@ public class Converter {
       menuSelection = g.sc.nextInt();
       switch (menuSelection) {
         case 1:
-          view = CupToTeaspoon.getInstance();
+          view = CupToTeaspoon.instance;
           break;
         case 2:
-          view = MilesKilometers.getInstance();
+          view = MilesKilometers.instance;
           break;
         case 3:
-          view = CelsiusFahrenheit.getInstance();
+          view = CelsiusFahrenheit.instance;
           break;
         case 4:
           view = null;
