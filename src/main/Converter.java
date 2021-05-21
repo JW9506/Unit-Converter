@@ -48,10 +48,13 @@ public class Converter {
       menuSelection = Integer.parseInt(sc.nextLine());
       switch (menuSelection) {
         case 1:
+          cupTeaspoonDisplay(loop);
           break;
         case 2:
+          milesKilometersDisplay(loop);
           break;
         case 3:
+          celsiusFahrenheitDisplay(loop);
           break;
         default:
           System.out.println("Please select 1-4");
