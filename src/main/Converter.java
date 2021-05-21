@@ -33,6 +33,10 @@ public class Converter {
     }
   }
 
+  private static void display(String unit1, double qty1, String unit2, double qty2) {
+    System.out.println("\nThere are " + qty2 + unit2 + " in " + qty1 + unit1 + "\n");
+  }
+
   public static void main(String[] args) {
     int menuSelection = -1;
     while (loop.isLoop()) {
