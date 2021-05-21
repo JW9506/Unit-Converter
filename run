@@ -1,6 +1,6 @@
 #!/bin/bash
 
-target="src/com/java/Main"
+target="src/main/Converter"
 if [ $# == 1 ]; then
   target=$1
 fi
