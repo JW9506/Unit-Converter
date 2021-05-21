@@ -59,4 +59,100 @@ public class Converter {
       }
     }
   }
+
+  private static void cupTeaspoonDisplay(Loop loop) {
+    int menuSelection = -1;
+    while (loop.isLoop()) {
+      double unitInput = 0.0, unitOutput = 0.0;
+      System.out.println("1. Cups to Teaspoons");
+      System.out.println("2. Teaspoons to Cups");
+      System.out.println("3. Quit");
+      menuSelection = Integer.parseInt(sc.nextLine());
+      switch (menuSelection) {
+        case 1:
+          System.out.println("Enter cups:");
+          unitInput = Double.parseDouble(sc.nextLine());
+          unitOutput = cupsTeaspoons(unitInput, true);
+          display("cups", unitInput, "tsp", unitOutput);
+          break;
+        case 2:
+          System.out.println("Enter Teaspoons:");
+          unitInput = Double.parseDouble(sc.nextLine());
+          unitOutput = cupsTeaspoons(unitInput, false);
+          display("tsp", unitInput, "cups", unitOutput);
+          break;
+        case 3:
+          loop.setLoop(false);
+          break;
+        default:
+          System.out.println("Please select 1-3");
+          break;
+      }
+    }
+    loop.setLoop(true);
+  }
+
+  private static void celsiusFahrenheitDisplay(Loop loop) {
+    int menuSelection = -1;
+    while (loop.isLoop()) {
+      double unitInput = 0.0, unitOutput = 0.0;
+      System.out.println("1. Celsius to Fahrenheit");
+      System.out.println("2. Fahrenheit to Celsius");
+      System.out.println("3. Quit");
+      menuSelection = Integer.parseInt(sc.nextLine());
+      switch (menuSelection) {
+        case 1:
+          System.out.println("Enter Celsius:");
+          unitInput = Double.parseDouble(sc.nextLine());
+          unitOutput = celsiusFahrenheit(unitInput, true);
+          display("C", unitInput, "F", unitOutput);
+          break;
+        case 2:
+          System.out.println("Enter Fahrenheit:");
+          unitInput = Double.parseDouble(sc.nextLine());
+          unitOutput = celsiusFahrenheit(unitInput, false);
+          display("F", unitInput, "C", unitOutput);
+          break;
+        case 3:
+          loop.setLoop(false);
+          break;
+        default:
+          System.out.println("Please select 1-3");
+          break;
+      }
+    }
+    loop.setLoop(true);
+  }
+
+  private static void milesKilometersDisplay(Loop loop) {
+    int menuSelection = -1;
+    while (loop.isLoop()) {
+      double unitInput = 0.0, unitOutput = 0.0;
+      System.out.println("1. Miles to Kilometers");
+      System.out.println("2. Kilometers to Miles");
+      System.out.println("3. Quit");
+      menuSelection = Integer.parseInt(sc.nextLine());
+      switch (menuSelection) {
+        case 1:
+          System.out.println("Enter Miles:");
+          unitInput = Double.parseDouble(sc.nextLine());
+          unitOutput = milesKilometers(unitInput, true);
+          display("mi", unitInput, "km", unitOutput);
+          break;
+        case 2:
+          System.out.println("Enter Kilometers:");
+          unitInput = Double.parseDouble(sc.nextLine());
+          unitOutput = milesKilometers(unitInput, false);
+          display("km", unitInput, "mi", unitOutput);
+          break;
+        case 3:
+          loop.setLoop(false);
+          break;
+        default:
+          System.out.println("Please select 1-3");
+          break;
+      }
+    }
+    loop.setLoop(true);
+  }
 }
