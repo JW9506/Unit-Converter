@@ -3,6 +3,9 @@ package main.utils;
 public class Loop {
   boolean loop = true;
 
+  Loop() {
+  }
+
   public boolean isLoop() {
     return loop;
   }
