@@ -1,5 +1,7 @@
 package main;
 
+import java.util.InputMismatchException;
+
 import main.utils.g;
 
 public class Converter {
@@ -13,7 +15,14 @@ public class Converter {
       System.out.println("2. Miles to Kilometers");
       System.out.println("3. Celsius to Fahrenheit");
       System.out.println("4. Quit");
-      menuSelection = g.sc.nextInt();
+      try {
+        menuSelection = g.sc.nextInt();
+      } catch (InputMismatchException e) {
+        g.sc.next();
+        System.out.println("Invalid input, please try again");
+      } catch (Exception e) {
+        g.Exit();
+      }
       switch (menuSelection) {
         case 1:
           view = CupToTeaspoon.instance;
