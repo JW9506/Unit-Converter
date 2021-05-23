@@ -3,20 +3,23 @@ package main;
 import java.util.InputMismatchException;
 
 import main.common.g;
-import main.conversions.layerOne.Distance;
-import main.conversions.layerOne.LayerOne;
-import main.conversions.layerOne.Volume;
+import main.menu.category.CategoryBase;
+import main.menu.category.Distance;
+import main.menu.category.Volume;
 
 public class Converter {
-  private static LayerOne view = null;
+  private static CategoryBase[] categories = new CategoryBase[] { Volume.instance, Distance.instance };
 
   public static void main(String[] args) {
     int menuSelection = -1;
     while (g.loop.isLoop()) {
       System.out.println("\nPlease select an option:");
-      System.out.println("1. Volume Conversions");
-      System.out.println("2. Distance Conversions");
-      System.out.println("3. Quit");
+      int i;
+      for (i = 0; i < categories.length; ++i) {
+        CategoryBase category = categories[i];
+        System.out.println((i + 1) + ". " + category.getClass().getSimpleName() + " Conversions");
+      }
+      System.out.println((i + 1) + ". Quit");
       try {
         menuSelection = g.sc.nextInt();
       } catch (InputMismatchException e) {
@@ -25,21 +28,12 @@ public class Converter {
       } catch (Exception e) {
         g.Exit();
       }
-      switch (menuSelection) {
-        default:
-          System.out.println("Please select 1-3");
-          break;
-        case 1:
-          view = Volume.instance;
-          break;
-        case 2:
-          view = Distance.instance;
-          break;
-        case 3:
-          g.Exit();
-      }
-      if (view != null) {
-        view.show();
+      if (menuSelection - 1 < categories.length) {
+        categories[menuSelection - 1].show();
+      } else if (menuSelection - 1 == categories.length) {
+        g.Exit();
+      } else {
+        System.out.println("Please select 1-" + (categories.length + 1));
       }
     }
   }

@@ -1,3 +1,6 @@
 *.class
 .vscode
 bin
+clean
+run
+run-base

@@ -1,7 +1,7 @@
-package main.conversions.layerTwo;
+package main.menu.converters;
 
-public class MilesKilometers extends LayerTwo {
-  final public static MilesKilometers instance = new MilesKilometers();
+public class MilesKilometers extends ConverterBase {
+  final public static ConverterBase instance = new MilesKilometers();
 
   private MilesKilometers() {
     unit1 = "Miles";

@@ -1,7 +1,7 @@
-package main.conversions.layerTwo;
+package main.menu.converters;
 
-public class TeaspoonsCups extends LayerTwo {
-  final public static TeaspoonsCups instance = new TeaspoonsCups();
+public class TeaspoonsCups extends ConverterBase {
+  final public static ConverterBase instance = new TeaspoonsCups();
 
   private TeaspoonsCups() {
     unit1 = "Teaspoons";
