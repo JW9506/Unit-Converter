@@ -1,8 +1,8 @@
-package main;
+package main.conversions;
 
 import java.util.InputMismatchException;
 
-import main.utils.g;
+import main.common.g;
 
 public abstract class UnitConversionBase {
   protected String unit1;

@@ -2,7 +2,11 @@ package main;
 
 import java.util.InputMismatchException;
 
-import main.utils.g;
+import main.common.g;
+import main.conversions.CelsiusFahrenheit;
+import main.conversions.CupToTeaspoon;
+import main.conversions.MilesKilometers;
+import main.conversions.UnitConversionBase;
 
 public class Converter {
   private static UnitConversionBase view = null;

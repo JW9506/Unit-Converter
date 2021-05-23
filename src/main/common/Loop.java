@@ -1,4 +1,4 @@
-package main.utils;
+package main.common;
 
 public class Loop {
   boolean loop = true;

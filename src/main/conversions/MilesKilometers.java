@@ -1,4 +1,4 @@
-package main;
+package main.conversions;
 
 public class MilesKilometers extends UnitConversionBase {
   final public static UnitConversionBase instance = new MilesKilometers();

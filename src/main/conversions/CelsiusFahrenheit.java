@@ -1,4 +1,4 @@
-package main;
+package main.conversions;
 
 public class CelsiusFahrenheit extends UnitConversionBase {
   final public static UnitConversionBase instance = new CelsiusFahrenheit();
