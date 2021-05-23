@@ -3,22 +3,20 @@ package main;
 import java.util.InputMismatchException;
 
 import main.common.g;
-import main.conversions.CelsiusFahrenheit;
-import main.conversions.CupToTeaspoon;
-import main.conversions.MilesKilometers;
-import main.conversions.UnitConversionBase;
+import main.conversions.layerOne.Distance;
+import main.conversions.layerOne.LayerOne;
+import main.conversions.layerOne.Volume;
 
 public class Converter {
-  private static UnitConversionBase view = null;
+  private static LayerOne view = null;
 
   public static void main(String[] args) {
     int menuSelection = -1;
     while (g.loop.isLoop()) {
       System.out.println("\nPlease select an option:");
-      System.out.println("1. Cups to Teaspoons");
-      System.out.println("2. Miles to Kilometers");
-      System.out.println("3. Celsius to Fahrenheit");
-      System.out.println("4. Quit");
+      System.out.println("1. Volume Conversions");
+      System.out.println("2. Distance Conversions");
+      System.out.println("3. Quit");
       try {
         menuSelection = g.sc.nextInt();
       } catch (InputMismatchException e) {
@@ -28,22 +26,17 @@ public class Converter {
         g.Exit();
       }
       switch (menuSelection) {
+        default:
+          System.out.println("Please select 1-3");
+          break;
         case 1:
-          view = CupToTeaspoon.instance;
+          view = Volume.instance;
           break;
         case 2:
-          view = MilesKilometers.instance;
+          view = Distance.instance;
           break;
         case 3:
-          view = CelsiusFahrenheit.instance;
-          break;
-        case 4:
-          view = null;
-          g.loop.setLoop(false);
-          break;
-        default:
-          System.out.println("Please select 1-4");
-          break;
+          g.Exit();
       }
       if (view != null) {
         view.show();
