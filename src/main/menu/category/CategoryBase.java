@@ -20,6 +20,7 @@ public abstract class CategoryBase {
       unitOutput = 0.0;
       System.out.println();
       int i;
+      // print names of implemented conversions inside an implemented category
       for (i = 0; i < converters.length; ++i) {
         System.out.println((i + 1) + ". " + converters[i].unit1 + " to " + converters[i].unit2);
       }
@@ -27,9 +28,11 @@ public abstract class CategoryBase {
       try {
         menuSelection = g.sc.nextInt();
         if (menuSelection - 1 < converters.length) {
+          // dynamically select a converter
           ConverterBase sel = converters[menuSelection - 1];
           System.out.println("Enter " + sel.unit1 + ":");
           unitInput = g.sc.nextDouble();
+          // invoking the `convert` method from a specific converter
           unitOutput = sel.convert(unitInput);
           outputMsg(unitInput, sel.unit1, unitOutput, sel.unit2);
         } else if (menuSelection - 1 == converters.length) {

@@ -14,9 +14,11 @@ public class Converter {
 
   public static void main(String[] args) {
     int menuSelection = -1;
+    // main loop
     while (g.loop.isLoop()) {
       System.out.println("\nPlease select an option:");
       int i;
+      // obtain the class names to be part of the menu formation
       for (i = 0; i < categories.length; ++i) {
         CategoryBase category = categories[i];
         System.out.println((i + 1) + ". " + category.getClass().getSimpleName() + " Conversions");
@@ -30,11 +32,11 @@ public class Converter {
       } catch (Exception e) {
         g.Exit();
       }
-      if (menuSelection - 1 < categories.length) {
+      if (menuSelection - 1 < categories.length) { // if selection is valid
         categories[menuSelection - 1].show();
-      } else if (menuSelection - 1 == categories.length) {
+      } else if (menuSelection - 1 == categories.length) { // if user wants to quit
         g.Exit();
-      } else {
+      } else { // out of bound selection
         System.out.println("Please select 1-" + (categories.length + 1));
       }
     }
